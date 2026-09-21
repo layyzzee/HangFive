@@ -1,91 +1,72 @@
 # Hang8
 
-A responsive Hangman game built with **React** and **Vite** as a front-end portfolio project.
+A responsive, browser-based Hangman game built with React and Vite. This application was developed as a front-end portfolio project to demonstrate clean component architecture, deterministic state management, and optimized asset bundling.
 
-## **[Live Demo](https://layyzzee.github.io/Hang8/)**
+## Live Demo
 
-No installation required — the game is hosted online and can be played directly in your browser.
+The application is deployed and available to play directly in the browser:
+[Hang8 Live Deployment](https://github.io)
 
-## About
+## Project Overview
 
-Hang8 is a browser-based implementation of the classic **Hangman** word-guessing game.
+Hang8 translates the traditional mechanics of the Hangman word-guessing game into a reactive web application. The core objective of the project was to build a self-contained front-end application that handles real-time user input, tracks application state transitions safely, and provides a seamless user experience across mobile, tablet, and desktop viewports.
 
-The project was built to demonstrate practical front-end development skills, including React component design, state management, user interaction, conditional rendering, responsive styling, and deployment.
+## Core Features
 
-## Features
+- **Interactive Input Matrix:** Features a dynamic on-screen keyboard that maps layout states directly to user selections while preventing duplicate inputs.
+- **Deterministic Win/Loss Evaluation:** Continuous validation routines automatically intercept game states to determine victory or defeat conditions.
+- **Conditional Interface Lifecycle:** Seamlessly transitions between active gameplay, success states, and failure states without causing full browser reloads.
+- **Responsive Layout Design:** Built with modern CSS layout modules to guarantee structural fluidness on any screen size.
+- **Automated Deployment Pipeline:** Integrated with GitHub Actions workflows to automate production compilation and hosting via GitHub Pages.
 
-* Interactive Hangman game play
-* On-screen keyboard for letter selection
-* Dynamic word and letter state
-* Win and loss detection
-* Game reset functionality
-* Responsive interface
-* Deployed and accessible through GitHub Pages
+## Technical Stack
 
-## Technologies
+- **Framework:** React (Functional Architecture and Hooks)
+- **Build Tooling:** Vite
+- **Programming Language:** JavaScript (ES6+)
+- **Styling Methodology:** Custom CSS (Flexbox, Grid, and Media Queries)
+- **CI/CD and Hosting:** GitHub Actions and GitHub Pages
 
-* **React** — component-based UI and application state
-* **JavaScript** — game logic and user interaction
-* **Vite** — development and build tooling
-* **CSS** — styling and responsive layout
-* **GitHub Pages** — hosting and deployment
+## Engineering Competencies Demonstrated
 
-## Skills Demonstrated
+### Component Architecture
+The application is structured into decoupled, single-responsibility React components. This modularity ensures high readability, enforces a unidirectional data flow, and simplifies testing or scaling individual UI layers.
 
-### React & Component Design
+### State Synchronization
+Leverages React state hooks to coordinate asynchronous mutations across separate game elements. A single letter guess simultaneously triggers updates to the hidden word array, disables matching keys in the input grid, and updates the structural countdown of the gallows graphics.
 
-The application is structured using React components, allowing different parts of the game interface to be separated into manageable and reusable pieces.
+### Application Performance and Optimization
+Utilizes Vite's lightning-fast bundling engine to compile production assets. The final build utilizes aggressive code minification and asset tree-shaking, resulting in minimal load times and optimal Core Web Vitals.
 
-### State Management
+## Local Development and Installation
 
-React state is used to manage the changing state of the game, including guessed letters, the current word, remaining attempts, and whether the player has won or lost.
+To inspect, run, or extend this project locally, ensure you have Node.js installed on your machine, then complete the following steps:
 
-### Interactive UI
+1. Clone the repository to your local environment:
+   ```bash
+   git clone https://github.com
+   cd Hang8
+   ```
 
-The interface responds immediately to player input, updating the displayed word, keyboard state, and Hangman illustration as the game progresses.
+2. Install the necessary project dependencies:
+   ```bash
+   npm install
+   ```
 
-### Conditional Rendering
+3. Launch the local development server:
+   ```bash
+   npm run dev
+   ```
+   Open the local host URL provided in your terminal output (typically `http://localhost:5173`) to view the application.
 
-Different UI states are displayed depending on the current progress of the game, including active gameplay, winning, and losing states.
+### Compilation for Production
 
-### Responsive Design
-
-The interface is designed to remain functional and readable across different screen sizes and devices.
-
-### Deployment
-
-The application is built using Vite and deployed to GitHub Pages, providing a publicly accessible live version of the project.
-
-## Development
-
-If you'd like to run the project locally for development:
-
-```bash
-npm install
-npm run dev
-```
-
-To create a production build:
-
+To generate an optimized, production-ready build distribution:
 ```bash
 npm run build
 ```
+The compiled, production-ready static assets will be output to the `/dist` directory.
 
-## Project Purpose
+## Architectural Key Takeaways
 
-Hang8 was created as a portfolio project to demonstrate the development of a complete, interactive front-end application.
-
-The project provided an opportunity to practice working with **React, state management, component-based architecture, user input, responsive design, and web deployment** while building something that can be experienced directly in the browser.
-
-## What I Learned
-
-Through developing Hang8, I gained practical experience with:
-
-* Building interactive applications with React
-* Managing application state
-* Structuring interfaces with reusable components
-* Handling user input and application events
-* Implementing conditional UI states
-* Creating responsive layouts
-* Using Vite as a modern development tool
-* Deploying applications with GitHub Pages
+Developing Hang8 provided deep practical experience in managing structural UI states and handling domestic event loops in client-side applications. Key learnings involved refining patterns around lifting state up to mutual parent components, maintaining immutable state update patterns, and properly structuring project configuration utilities like ESLint and Vite plugins.
